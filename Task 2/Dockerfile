@@ -1,8 +1,5 @@
 FROM python:3.10.12
 
-RUN apt-get update
-RUN apt-get install -y --no-install-recommends
-
 WORKDIR /app
 
 RUN pip install -q torch torchaudio transformers pytorch_lightning==1.9.5 datasets torchmetrics wandb scipy scikit-learn

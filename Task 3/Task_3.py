@@ -63,8 +63,8 @@ class GLUEDataModule(LightningDataModule):
             model_name_or_path: str,
             task_name: str = "mrpc",
             max_seq_length: int = 128,
-            train_batch_size: int = 32,
-            eval_batch_size: int = 32,
+            train_batch_size: int = 16,
+            eval_batch_size: int = 16,
             **kwargs,
     ):
         super().__init__()
@@ -139,8 +139,8 @@ class GLUETransformer(LightningModule):
             adam_epsilon: float = 1e-8,  # default: 1e-8
             warmup_steps: int = 0,  # default: 0
             weight_decay: float = 0.0,  # default: 0.0
-            train_batch_size: int = 32,  # default: 32
-            eval_batch_size: int = 32,  # default: 32
+            train_batch_size: int = 16,  # default: 32
+            eval_batch_size: int = 16,  # default: 32
             eval_splits: Optional[list] = None,
             **kwargs,
     ):
@@ -276,8 +276,8 @@ if __name__ == "__main__":
     parser.add_argument("--adam_epsilon", type=float, default=1e-8, help="Adam epsilon")
     parser.add_argument("--warmup_steps", type=int, default=0, help="Warmup steps")
     parser.add_argument("--weight_decay", type=float, default=0.0, help="Weight decay")
-    parser.add_argument("--train_batch_size", type=int, default=8, help="Training batch size")
-    parser.add_argument("--eval_batch_size", type=int, default=8, help="Evaluation batch size")
+    parser.add_argument("--train_batch_size", type=int, default=16, help="Training batch size")
+    parser.add_argument("--eval_batch_size", type=int, default=16, help="Evaluation batch size")
 
     args = parser.parse_args()
 
