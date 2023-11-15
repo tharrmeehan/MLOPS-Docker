@@ -1,4 +1,5 @@
 
+
 # MLOPS-Docker
 
 In this project, we containerize a python application with its own environment and packages. We will then train a huggingface model on it.
@@ -13,7 +14,8 @@ In order to run this container you'll need docker installed.
 * [Linux](https://docs.docker.com/linux/started/)
 
 ### Cloning the Repo
-When cloning the repo, you'll see 3 folders. The folder titled 'Task 2' is the one, which contains the docker container we are going to build and run.
+When cloning the repo, you'll see 3 folders. The folder titled **Task 2** is the one, which contains the docker container we are going to build and run. If you want to take a look at  the code of my other tasks, feel free.
+
 To clone the repo
 
 ```shell
@@ -26,7 +28,7 @@ cd '.\Task 2\'
 ```
 ### Usage
 
-To build and run the docker container, we are going to run the following commands inside the Task 2 folder
+To build and run the docker container, we are going to run the following commands inside the **Task 2** folder
 
 ```shell
 docker build -t mlops-docker .
