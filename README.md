@@ -26,8 +26,6 @@ cd '.\Task 2\'
 ```
 ### Usage
 
-#### Container Parameters
-
 To build and run the docker container, we are going to run the following commands inside the Task 2 folder
 
 ```shell
