@@ -39,7 +39,7 @@ Then run it directly using the following command
 ```shell
 docker run mlops-docker
 ```
-The output should be visible to you after some time. If you use wandb, you can
+The output should be visible to you after some time. You can added your logger into the .py file, if you'd like and you can change the hyperparameters in the dockerfile, if you'd like aswell.
 
 ## Authors
 
