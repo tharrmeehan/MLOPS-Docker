@@ -9,9 +9,9 @@ In this project, we containerize a python application with its own environment a
 ### Prerequisities
 In order to run this container you'll need docker installed.
 
-* [Windows](https://docs.docker.com/windows/started)
-* [OS X](https://docs.docker.com/mac/started/)
-* [Linux](https://docs.docker.com/linux/started/)
+* [Windows](https://docs.docker.com/desktop/install/windows-install/)
+* [OS X](https://docs.docker.com/desktop/install/mac-install/)
+* [Linux](https://docs.docker.com/desktop/install/linux-install/)
 
 ### Cloning the Repo
 When cloning the repo, you'll see 3 folders. The folder titled **Task 2** is the one, which contains the docker container we are going to build and run. If you want to take a look at  the code of my other tasks, feel free.
