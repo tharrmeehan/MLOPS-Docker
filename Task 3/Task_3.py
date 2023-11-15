@@ -1,13 +1,9 @@
-import os
-os.environ["WANDB_START_METHOD"] = "thread"
-
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 
 from datetime import datetime
 from typing import Optional
 import datasets
 import torch
-import wandb
 from torch.utils.data import DataLoader
 from transformers import (
     AutoConfig,
@@ -16,9 +12,7 @@ from transformers import (
     get_linear_schedule_with_warmup,
 )
 from pytorch_lightning import LightningDataModule, LightningModule, Trainer, seed_everything
-from pytorch_lightning.loggers import WandbLogger
 
-wandb.login(key='0ab844d1b25fdfd75e8edda5fa68a46dca6d031e')
 seed_everything(42)
 
 class GLUEDataModule(LightningDataModule):
@@ -241,7 +235,6 @@ class GLUETransformer(LightningModule):
 
 
 def main(hparams):
-    wandb_logger = WandbLogger(log_model=False, project="newcrosoft-docker")
     dm = GLUEDataModule(
         model_name_or_path="distilbert-base-uncased",
         task_name="mrpc",
@@ -264,7 +257,6 @@ def main(hparams):
         max_epochs=3,
         accelerator="auto",
         devices=1 if torch.cuda.is_available() else None,
-        logger=wandb_logger,
         enable_checkpointing=False,
     )
     trainer.fit(model, datamodule=dm)
@@ -282,4 +274,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     main(args)
-    wandb.finish()
